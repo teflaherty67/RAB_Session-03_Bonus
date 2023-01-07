@@ -7,6 +7,7 @@ using Autodesk.Revit.UI.Selection;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Security;
 using Excel = Microsoft.Office.Interop.Excel;
 using Forms = System.Windows.Forms;
 
@@ -70,6 +71,11 @@ namespace RAB_Session_03_Bonus
                 }
                 excelData.Add(rowData);
             }
+
+            // save and close excel file
+
+            excel.Save();
+            excel.Quit();
 
             return Result.Succeeded;
         }

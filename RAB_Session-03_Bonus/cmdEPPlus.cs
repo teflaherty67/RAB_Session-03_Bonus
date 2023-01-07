@@ -8,7 +8,6 @@ using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Excel = OfficeOpenXml;
 using Forms = System.Windows.Forms;
 
 #endregion
@@ -53,7 +52,32 @@ namespace RAB_Session_03_Bonus
 
             ExcelPackage excel = new ExcelPackage(excelFile);
             ExcelWorkbook workbook = excel.Workbook;
-            ExcelWorksheet worksheet = workbook.Worksheets[1];            
+            ExcelWorksheet worksheet = workbook.Worksheets[0];
+
+            // get row & column count
+
+            int rows = worksheet.Dimension.Rows;
+            int columns = worksheet.Dimension.Columns;
+
+            // read Excel data into a list
+
+            List<List<string>> excelData = new List<List<string>>();
+
+            for (int i = 1; i <= rows; i++)
+            {
+                List<string> rowData = new List<string>();
+                for (int j = 1; j <= columns; j++)
+                {
+                    string cellContent = worksheet.Cells[i, j].Value.ToString();
+                    rowData.Add(cellContent);
+                }
+                excelData.Add(rowData);
+            }
+
+            // save & clsoe excel file
+
+            excel.Save();
+            excel.Dispose();
 
             return Result.Succeeded;
         }

@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
   <AddIn Type="Command">
-    <Text>Command RAB_Session-03_Bonus</Text>
+    <Text>Run Interop.Excel</Text>
     <Description>Some description for RAB_Session-03_Bonus</Description>
     <Assembly>RAB_Session-03_Bonus.dll</Assembly>
-    <FullClassName>RAB_Session_03_Bonus.Command</FullClassName>
+    <FullClassName>RAB_Session_03_Bonus.cmdInteropExcel</FullClassName>
     <ClientId>acb6dc42-cdbe-469e-a489-92e9c062cbf5</ClientId>
     <VendorId>T Edward</VendorId>
     <VendorDescription>T Edward Coder</VendorDescription>
   </AddIn>
-  <AddIn Type="Application">
-    <Name>Application RAB_Session-03_Bonus</Name>
+  <AddIn Type="Command">
+    <Text>Run EPPlus</Text>
+    <Description>Some description for RAB_Session-03_Bonus</Description>
     <Assembly>RAB_Session-03_Bonus.dll</Assembly>
-    <FullClassName>RAB_Session_03_Bonus.App</FullClassName>
-    <ClientId>b67254a0-d073-4022-ad0c-5f1d1441e2de</ClientId>
+    <FullClassName>RAB_Session_03_Bonus.cmdEPPlus</FullClassName>
+    <ClientId>A1FCF025-3A69-444D-B730-A5584715CF52</ClientId>
     <VendorId>T Edward</VendorId>
     <VendorDescription>T Edward Coder</VendorDescription>
   </AddIn>
