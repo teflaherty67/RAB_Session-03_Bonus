@@ -72,9 +72,24 @@ namespace RAB_Session_03_Bonus
                 excelData.Add(rowData);
             }
 
+            // create new worksheet
+
+            Excel.Worksheet newWorkSheet = workbook.Worksheets.Add();
+            newWorkSheet.Name = "Test Interop.Excel";
+
+            // write data to excel
+
+            for(int k=1; k<= 10; k++)
+            {
+                for(int j = 1; j <= 10; j++)
+                {
+                    newWorkSheet.Cells[k,j].Value = "Row " + k.ToString() + ": Column " + j.ToString();
+                }
+            }
+
             // save and close excel file
 
-            excel.Save();
+            workbook.Save();
             excel.Quit();
 
             return Result.Succeeded;
